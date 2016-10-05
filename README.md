@@ -24,5 +24,10 @@ Simple PHP ToDo App
         - Separate presentation layer from processing
     - AJAX handling
 - Back End Database
+    - - Back End Database
     - MySQL
+        - Fields
+            - id
+            - ToDo
+            - done
     - PDO
