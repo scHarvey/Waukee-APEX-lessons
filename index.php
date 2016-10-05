@@ -1,4 +1,11 @@
 <?php
+//database info 
+$db_server = '';
+$db_name = '';
+$db_user = '';
+$db_pass = '';
+
+$db = new PDO('mysql:host=' . $db_server . ';dbname=' . $db_name . ';charset=utf8mb4', $db_user, $db_pass);
 
 if ( true === $submit ) {
   //process form submission
@@ -22,8 +29,9 @@ if ( true === $submit ) {
       <ul class="todos">
       <?php
       //retrieve current ToDos from database
-
-      //[INSERT PDO CODE HERE]
+      $stmt = $db->query("SELECT * FROM tb_todos");
+      return $stmt->fetchAll(PDO::FETCH_OBJ);
+      
       $todos = /*[PDO FETCH]*/;
       foreach ($todos as $todo) {
         if ( true === $todo->done ) {
