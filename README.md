@@ -37,3 +37,11 @@ Simple PHP ToDo App
               PRIMARY KEY (`id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
     - PDO
+    - db-config.php
+        -<?php
+        //database info
+        $db_info['server'] = 'localhost';
+        $db_info['name'] = '';
+        $db_info['user'] = '';
+        $db_info['pass'] = '';
+        
