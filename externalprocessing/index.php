@@ -1,17 +1,26 @@
 <?php
-//database info 
-$db_server = '';
-$db_name = '';
-$db_user = '';
-$db_pass = '';
+//database info
+$db_server = 'todo.clintharvey.net';
+$db_name = 'mysql';
+$db_user = 'todo_user';
+$db_pass = 'ThisIsNotAGreatPassword';
 
 $db = new PDO('mysql:host=' . $db_server . ';dbname=' . $db_name . ';charset=utf8mb4', $db_user, $db_pass);
 
 if ( true === $submit ) {
   //process form submission
-    
+  $todo = $_POST['todo'];
+  $done = false;
+
+  $stmt = $db->prepare("INSERT INTO tb_todos("todo","done") VALUES(:todo,:done)");
+  $stmt->execute(array(':todo' => $todo, ':done' => $done));
+
+  //the autoincremented ID for the todo we just inserted
+  //not really using this at the moment, but we might want to later (foreshadowing)
+  $insertId = $db->lastInsertId();
+
 }
-  
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -31,7 +40,7 @@ if ( true === $submit ) {
       //retrieve current ToDos from database
       $stmt = $db->query("SELECT * FROM tb_todos");
       return $stmt->fetchAll(PDO::FETCH_OBJ);
-      
+
       $todos = /*[PDO FETCH]*/;
       foreach ($todos as $todo) {
         if ( true === $todo->done ) {
@@ -45,9 +54,9 @@ if ( true === $submit ) {
       </ul>
     </section>
 		<footer class="info">
-			
+
 		</footer>
-    
+
     <script src=""></script>
   </body>
 </html>
