@@ -10,7 +10,9 @@ if ( isSet($_POST['todo']) ) {
 	$done = 0;
 	try {
 		$stmt = $db->prepare( "INSERT INTO tb_todos(todo, done) VALUES(:todo, :done)" );
-		$stmt->execute( array( ':todo' => $todo, ':done' => $done ) );
+		$stmt->bindParam(':todo', $todo, PDO::PARAM_STR);
+		$stmt->bindParam(':done', $done, PDO::PARAM_INT);
+		$stmt->execute();
 	} catch ( PDOException $e ) {
 		echo '<p>ERROR: ' . $e->getMessage() . '</p>';
 	}
@@ -18,7 +20,6 @@ if ( isSet($_POST['todo']) ) {
 	//the autoincremented ID for the todo we just inserted
 	//not really using this at the moment, but we might want to later (foreshadowing)
 	$insertId = $db->lastInsertId();
-
-    $host  = $_SERVER['HTTP_HOST'];
-    header('Location: ' . $host . '/index.php');
+	
+    header('Location: index.php');
 }

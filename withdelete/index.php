@@ -9,11 +9,11 @@ $db = new PDO('mysql:host=' . $db_info['server'] . ';dbname=' . $db_info['name']
 	<head>
 		<meta charset="utf-8">
 		<title>Todo</title>
-		<link rel="stylesheet" href="">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	</head>
 	<body>
 		<section class="todoapp">
-      <form method="post" action="insertToDo.php" name="new_todo">
+      <form method="post" action="/insertToDo.php" name="new_todo">
         <input type="text" name="todo" />
         <input type="submit" name="submit" text="Create ToDo" />
       </form>
@@ -24,12 +24,14 @@ $db = new PDO('mysql:host=' . $db_info['server'] . ';dbname=' . $db_info['name']
       $todos = $stmt->fetchAll(PDO::FETCH_OBJ);
 
       foreach ($todos as $todo) {
-	      if ( true === $todo->done ) {
+	      if ( 1 == $todo->done ) {
 		      //if our todo is marked as done then we'll use the $is_done variable to add a class to our li
 		      $is_done = ' done';
+	      } else {
+		      $is_done = '';
 	      }
 	
-	      echo '<li class="todo' . $is_done . '"><button id="done-' . $todo->id . '" text="Done">' . $todo->todo . '</li>';
+	      echo '<li class="todo' . $is_done . '"><button onclick="window.location=\'deleteToDo.php?id=' . $todo->id . '\';">Done</button> ' . $todo->todo . '</li>';
       }
       ?>
       </ul>
@@ -37,7 +39,7 @@ $db = new PDO('mysql:host=' . $db_info['server'] . ';dbname=' . $db_info['name']
 		<footer class="info">
 
 		</footer>
-
-    <script src=""></script>
+		<script   src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
 </html>
