@@ -1,13 +1,13 @@
 #Basic Development Fundamentals
 - Variables
     - Like basic algebra 
-    - x = 4
-    - x + 4 = 8
+    - - x = 4
+    - - x + 4 = 8
     - Arrays
         - A list of items 
         - Numbered index 
-            - array_cars('ford', 'honda);
-            - echo array[1];
+            - - array_cars('ford', 'honda);
+            - - echo array[1];
         - Named indexes 
             - array('first' => 'ford', 'second' => 'honda');
             - echo array['first'];
@@ -16,13 +16,13 @@
         - The basic structure is called a class, and implementation of that class is an object
         - Can contain its own variables called "properties"
         - Can contain functions called "methods"
-        - object_car1->make = 'ford'
-        - object_car1->color = 'grey'
-        - object_car1->milage = '35000'
-        - object_car1->state = 'dirty'
+        - - object_car1->make = 'ford'
+        - - object_car1->color = 'grey'
+        - - object_car1->milage = '35000'
+        - - object_car1->state = 'dirty'
         - Lets say we have a method called "wash" that changes the car's state to 'clean'
-        - object_car1->wash
-        - echo object_car1
+        - - object_car1->wash
+        - - echo object_car1
 - Conditional
     - Logical operations
         - if (x > 2) { 
