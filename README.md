@@ -2,29 +2,32 @@
 * Variables
     * Like basic algebra 
 
-```
+```javascript
      x = 4 
      x + 4 = 8
 ```
-    * Arrays
-        * A list of items 
-        * Numbered index 
 
-```
+ * Arrays
+    * A list of items 
+    * Numbered index 
+
+```javascript
              array_cars('ford', 'honda');
              echo array[1];
 ```
-        * Named indexes 
 
-```
+* Named indexes 
+
+```javascript
              array('first' => 'ford', 'second' => 'honda');
              echo array['first'];
 ```
-    * Classes/Objects
-        * The ultimate variable type
-        * The basic structure is called a class, and implementation of that class is an object
-        * Can contain its own variables called "properties"
-        * Can contain functions called "methods"
+
+* Classes/Objects
+    * The ultimate variable type
+    * The basic structure is called a class, and implementation of that class is an object
+    * Can contain its own variables called "properties"
+    * Can contain functions called "methods"
 
 ```javascript
             object_car1->make = 'ford'
@@ -32,7 +35,7 @@
             object_car1->milage = '35000'
             object_car1->state = 'dirty'
 ```        
-        * Lets say we have a method called "wash" that changes the car's state to 'clean'
+* Lets say we have a method called "wash" that changes the car's state to 'clean'
 
 ```javascript
             object_car1->wash
@@ -40,6 +43,16 @@
 ```
 * Conditional
     * Logical operations
+
+```javascript
+    x > y
+    x >= y
+    x < y
+    x <= y
+    x != y
+    x > y && a < b
+    x < y || a > b
+```    
 
 ```javascript
         if (x > 2) { 
@@ -69,6 +82,7 @@
                 print ('X = ' . x);
             }
 ```
+
 * Functions
     * A sort of black box that ask to do something and it generally responds with an answer
 
@@ -85,10 +99,10 @@
     * Function scope
 
 #PHP Specifics
-    * Variables must start with a $
-    * Variable names are case sensitive: $x and $X are two different variables
-    * First character of a variable name (after the $) can't be a number.
-    * End of line signified by a ;
+* Variables must start with a $
+* Variable names are case sensitive: $x and $X are two different variables
+* First character of a variable name (after the $) can't be a number.
+* End of line signified by a ;
 
 # todo
 Simple PHP ToDo App
@@ -130,10 +144,10 @@ Simple PHP ToDo App
               `done` tinyint(1) NOT NULL,
               PRIMARY KEY (`id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-            ```
+```
 
-    * PDO
-    * db-config.php
+* PDO
+* db-config.php
 
 ```php
         <?php
