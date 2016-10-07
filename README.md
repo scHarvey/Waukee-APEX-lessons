@@ -69,10 +69,11 @@ Simple PHP ToDo App
         - Update
         - Delete
     - Nice to have features
-        - Ajax
+        - Edit a ToDo's text
         - Due dates
         - Reminders
         - Recurrence
+        - Ajax
 - Pseudo code
     - Think like a user
         - how will you interact the list?
