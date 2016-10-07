@@ -32,7 +32,7 @@
 ```javascript
             object_car1->make = 'ford'
             object_car1->color = 'grey'
-            object_car1->milage = '35000'
+            object_car1->mileage = '35000'
             object_car1->state = 'dirty'
 ```        
 * Lets say we have a method called "wash" that changes the car's state to 'clean'
