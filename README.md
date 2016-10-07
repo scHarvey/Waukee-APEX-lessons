@@ -13,9 +13,9 @@
             - echo array['first'];
     - Classes/Objects
         - The ultimate variable type
-        - the basic structure is called a class, and implementation of that class is an object
-        - can contain its own variables called "properties"
-        - can contain functions called methods
+        - The basic structure is called a class, and implementation of that class is an object
+        - Can contain its own variables called "properties"
+        - Can contain functions called methods
         - object_car1->make = 'ford'
         - object_car1->color = 'grey'
         - object_car1->milage = '35000'
