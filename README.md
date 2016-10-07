@@ -5,7 +5,7 @@
 ```javascript
      x = 4 
      x = x + 2
-     echo x
+     print x
 ```
 
  * Arrays
@@ -14,14 +14,14 @@
 
 ```javascript
     array_cars('ford', 'honda');
-    echo array_cars[1];
+    print array_cars[1];
 ```
 
 * Named indexes 
 
 ```javascript
     array('first' => 'ford', 'second' => 'honda');
-    echo array['first'];
+    print array['first'];
 ```
 
 * Classes/Objects
@@ -40,7 +40,7 @@
 
 ```javascript
     object_car1->wash
-    echo object_car1
+    print object_car1
 ```
 * Conditional
     * Logical operations
