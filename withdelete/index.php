@@ -15,7 +15,7 @@ $db = new PDO('mysql:host=' . $db_info['server'] . ';dbname=' . $db_info['name']
 	</head>
 	<body>
 		<section class="todoapp">
-      <form method="post" action="/insertToDo.php" name="new_todo">
+      <form method="post" action="insertToDo.php" name="new_todo">
         <input type="text" name="todo" />
         <input type="submit" name="submit" text="Create ToDo" />
       </form>

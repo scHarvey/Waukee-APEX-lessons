@@ -74,6 +74,7 @@
 ```javascript  
             do {
                 print ('X = ' . x);
+                x = x + 1; // or x++;
             } while (x < 10)
 ```
 
@@ -90,7 +91,7 @@
         function add ( $x, $y ) {
             return $x + $y;
         }      
-        $x = sum( 3, 4);
+        $x = add( 3, 4);
 ```
 
 * Scope
