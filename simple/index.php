@@ -52,7 +52,7 @@ if ( isSet($_POST['todo']) ) {
 		      $is_done = '';
 	      }
 	
-	      echo '<li class="todo' . $is_done . '"><button id="done-' . $todo->id . '"  >Done</button>' . $todo->todo . '</li>';
+	      echo '<li class="todo' . $is_done . '"><button class="btn-danger" id="done-' . $todo->id . '"  >Done</button>' . $todo->todo . '</li>';
       }
       ?>
       </ul>
