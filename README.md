@@ -15,7 +15,7 @@
         - The ultimate variable type
         - The basic structure is called a class, and implementation of that class is an object
         - Can contain its own variables called "properties"
-        - Can contain functions called methods
+        - Can contain functions called "methods"
         - object_car1->make = 'ford'
         - object_car1->color = 'grey'
         - object_car1->milage = '35000'
