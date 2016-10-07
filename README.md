@@ -4,7 +4,8 @@
 
 ```javascript
      x = 4 
-     x + 4 = 8
+     x = x + 2
+     echo x
 ```
 
  * Arrays
@@ -12,15 +13,15 @@
     * Numbered index 
 
 ```javascript
-             array_cars('ford', 'honda');
-             echo array[1];
+    array_cars('ford', 'honda');
+    echo array_cars[1];
 ```
 
 * Named indexes 
 
 ```javascript
-             array('first' => 'ford', 'second' => 'honda');
-             echo array['first'];
+    array('first' => 'ford', 'second' => 'honda');
+    echo array['first'];
 ```
 
 * Classes/Objects
@@ -30,16 +31,16 @@
     * Can contain functions called "methods"
 
 ```javascript
-            object_car1->make = 'ford'
-            object_car1->color = 'grey'
-            object_car1->mileage = '35000'
-            object_car1->state = 'dirty'
+    object_car1->make = 'ford'
+    object_car1->color = 'grey'
+    object_car1->mileage = '35000'
+    object_car1->state = 'dirty'
 ```        
 * Lets say we have a method called "wash" that changes the car's state to 'clean'
 
 ```javascript
-            object_car1->wash
-            echo object_car1
+    object_car1->wash
+    echo object_car1
 ```
 * Conditional
     * Logical operations
@@ -55,43 +56,43 @@
 ```    
 
 ```javascript
-        if (x > 2) { 
-            print("Yay, x is greater than 2"); 
-           } else { 
-            print ('Boo, x is 2 or less'); 
-           }
+    if (x > 2) { 
+        print("Yay, x is greater than 2"); 
+       } else { 
+        print ('Boo, x is 2 or less'); 
+       }
 ```
 * Loops
     * Repeat things for a number of times, or until some condition is met
 
 ```javascript
-        while ( x < 10) { 
-            print ('X = ' . x);
-            x = x + 1; // or x++;
-        }
+    while ( x < 10) { 
+        print ('X = ' . x);
+        x = x + 1; // or x++;
+    }
 ```
 
 ```javascript  
-            do {
-                print ('X = ' . x);
-                x = x + 1; // or x++;
-            } while (x < 10)
+    do {
+        print ('X = ' . x);
+        x = x + 1; // or x++;
+    } while (x < 10)
 ```
 
 ```javascript
-            for (x = 0; x < 10; x++){
-                print ('X = ' . x);
-            }
+    for (x = 0; x < 10; x++){
+        print ('X = ' . x);
+     }
 ```
 
 * Functions
     * A sort of black box that ask to do something and it generally responds with an answer
 
 ```php
-        function add ( $x, $y ) {
-            return $x + $y;
-        }      
-        $x = add( 3, 4);
+    function add ( $x, $y ) {
+        return $x + $y;
+    }      
+    $x = add( 3, 4);
 ```
 
 * Scope
@@ -139,22 +140,22 @@ Simple PHP ToDo App
             * done
 
 ```SQL
-            CREATE TABLE IF NOT EXISTS `tb_todos` (
-              `id` bigint(20) NOT NULL AUTO_INCREMENT,
-              `todo` text NOT NULL,
-              `done` tinyint(1) NOT NULL,
-              PRIMARY KEY (`id`)
-            ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+    CREATE TABLE IF NOT EXISTS `tb_todos` (
+      `id` bigint(20) NOT NULL AUTO_INCREMENT,
+      `todo` text NOT NULL,
+      `done` tinyint(1) NOT NULL,
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 ```
 
 * PDO
 * db-config.php
 
 ```php
-        <?php
-        //database info
-        $db_info['server'] = 'localhost';
-        $db_info['name'] = '';
-        $db_info['user'] = '';
-        $db_info['pass'] = '';
+    <?php
+    //database info
+    $db_info['server'] = 'localhost';
+    $db_info['name'] = '';
+    $db_info['user'] = '';
+    $db_info['pass'] = '';
 ```
