@@ -1,6 +1,6 @@
 #Basic Development Fundamentals
 - Variables
-    - like basic algebra 
+    - Like basic algebra 
     - x = 4
     - x + 4 = 8
     - Arrays
@@ -76,7 +76,7 @@ Simple PHP ToDo App
         - Ajax
 - Pseudo code
     - Think like a user
-        - how will you interact the list?
+        - How will you interact with the list?
         - What edge cases do you need to handle?
     - Write out workflow as comments
 - Front End
@@ -91,7 +91,7 @@ Simple PHP ToDo App
     - MySQL
         - Fields
             - id
-            - ToDo
+            - todo
             - done
             - CREATE TABLE IF NOT EXISTS `tb_todos` (
               `id` bigint(20) NOT NULL AUTO_INCREMENT,
