@@ -1,73 +1,84 @@
 #Basic Development Fundamentals
 * Variables
     * Like basic algebra 
-    *  ```javascript
+
+```
      x = 4 
      x + 4 = 8
-     ```
+```
     * Arrays
         * A list of items 
         * Numbered index 
-        * ```javascript
+
+```
              array_cars('ford', 'honda');
              echo array[1];
-             ```
+```
         * Named indexes 
-        * ```javascript
+
+```
              array('first' => 'ford', 'second' => 'honda');
              echo array['first'];
-            ```
+```
     * Classes/Objects
         * The ultimate variable type
         * The basic structure is called a class, and implementation of that class is an object
         * Can contain its own variables called "properties"
         * Can contain functions called "methods"
-        * ```javascript
+
+```javascript
             object_car1->make = 'ford'
             object_car1->color = 'grey'
             object_car1->milage = '35000'
             object_car1->state = 'dirty'
-            ```        
+```        
         * Lets say we have a method called "wash" that changes the car's state to 'clean'
-        * ```javascript
+
+```javascript
             object_car1->wash
             echo object_car1
-            ```
+```
 * Conditional
     * Logical operations
-        * ```javascript
+
+```javascript
         if (x > 2) { 
             print("Yay, x is greater than 2"); 
            } else { 
             print ('Boo, x is 2 or less'); 
            }
-         ```
+```
 * Loops
     * Repeat things for a number of times, or until some condition is met
-        * ```php
+
+```javascript
         while ( x < 10) { 
             print ('X = ' . x);
             x = x + 1; // or x++;
         }
-        ```
-        * ```php  
+```
+
+```javascript  
             do {
                 print ('X = ' . x);
             } while (x < 10)
-            ```
-        * ```php
+```
+
+```javascript
             for (x = 0; x < 10; x++){
                 print ('X = ' . x);
             }
-            ```
+```
 * Functions
     * A sort of black box that ask to do something and it generally responds with an answer
-    *   ```php
+
+```php
         function add ( $x, $y ) {
             return $x + $y;
         }      
         $x = sum( 3, 4);
-        ```
+```
+
 * Scope
     * You can have a variable within a function that shares a name with a variable outside of that function and there are zero issues with that.
     * Global scope
@@ -111,7 +122,8 @@ Simple PHP ToDo App
             * id
             * todo
             * done
-            * ```SQL
+
+```SQL
             CREATE TABLE IF NOT EXISTS `tb_todos` (
               `id` bigint(20) NOT NULL AUTO_INCREMENT,
               `todo` text NOT NULL,
@@ -119,13 +131,15 @@ Simple PHP ToDo App
               PRIMARY KEY (`id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
             ```
+
     * PDO
     * db-config.php
-    * ```php
+
+```php
         <?php
         //database info
         $db_info['server'] = 'localhost';
         $db_info['name'] = '';
         $db_info['user'] = '';
         $db_info['pass'] = '';
-        ```
+```
