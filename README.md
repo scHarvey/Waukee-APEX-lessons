@@ -1,54 +1,73 @@
 #Basic Development Fundamentals
 - Variables
     - Like basic algebra 
-    -- x = 4
-    -- x + 4 = 8
+     ```javascript
+     x = 4 
+     x + 4 = 8
+     ```
     - Arrays
         - A list of items 
         - Numbered index 
-            -- array_cars('ford', 'honda);
-            -- echo array[1];
+             ```javascript
+             array_cars('ford', 'honda');
+             echo array[1];
+             ```
         - Named indexes 
-            - array('first' => 'ford', 'second' => 'honda');
-            - echo array['first'];
+            ```javascript
+             array('first' => 'ford', 'second' => 'honda');
+             echo array['first'];
+            ```
     - Classes/Objects
         - The ultimate variable type
         - The basic structure is called a class, and implementation of that class is an object
         - Can contain its own variables called "properties"
         - Can contain functions called "methods"
-        -- object_car1->make = 'ford'
-        -- object_car1->color = 'grey'
-        -- object_car1->milage = '35000'
-        -- object_car1->state = 'dirty'
+            ```javascript
+            object_car1->make = 'ford'
+            object_car1->color = 'grey'
+            object_car1->milage = '35000'
+            object_car1->state = 'dirty'
+            ```        
         - Lets say we have a method called "wash" that changes the car's state to 'clean'
-        -- object_car1->wash
-        -- echo object_car1
+            ```javascript
+            object_car1->wash
+            echo object_car1
+            ```
 - Conditional
     - Logical operations
-        -- if (x > 2) { 
+        ```php
+        if (x > 2) { 
             print("Yay, x is greater than 2"); 
            } else { 
             print ('Boo, x is 2 or less'); 
            }
+         ```
 - Loops
     - Repeat things for a number of times, or until some condition is met
-    -- while ( x < 10) { 
-        print ('X = ' . x);
-        x = x + 1; // or x++;
-       }
-    -- do {
-        print ('X = ' . x);
-    } while (x < 10)
-    
-    -- for (x = 0; x < 10; x++){
-        print ('X = ' . x);
-       }
+        ```php
+        while ( x < 10) { 
+            print ('X = ' . x);
+            x = x + 1; // or x++;
+        }
+        ```
+        ```php  
+        do {
+            print ('X = ' . x);
+        } while (x < 10)
+        ```
+        ```php
+        for (x = 0; x < 10; x++){
+            print ('X = ' . x);
+        }
+        ```
 - Functions
     - A sort of black box that ask to do something and it generally responds with an answer
-    -- function add ( $x, $y ) {
-        return $x + $y;
-       }  
-    -- $x = sum( 3, 4);
+        ```php
+        function add ( $x, $y ) {
+            return $x + $y;
+        }      
+        $x = sum( 3, 4);
+        ```
 - Scope
     - You can have a variable within a function that shares a name with a variable outside of that function and there are zero issues with that.
     - Global scope
@@ -93,7 +112,8 @@ Simple PHP ToDo App
             - id
             - todo
             - done
-            -- CREATE TABLE IF NOT EXISTS `tb_todos` (
+            ```SQL
+            CREATE TABLE IF NOT EXISTS `tb_todos` (
               `id` bigint(20) NOT NULL AUTO_INCREMENT,
               `todo` text NOT NULL,
               `done` tinyint(1) NOT NULL,
@@ -101,10 +121,11 @@ Simple PHP ToDo App
             ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
     - PDO
     - db-config.php
-        -- <?php
+        ```php
+        <?php
         //database info
         $db_info['server'] = 'localhost';
         $db_info['name'] = '';
         $db_info['user'] = '';
         $db_info['pass'] = '';
-        
+        ```
