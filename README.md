@@ -25,34 +25,34 @@
         - - echo object_car1
 - Conditional
     - Logical operations
-        - if (x > 2) { 
+        - - if (x > 2) { 
             print("Yay, x is greater than 2"); 
            } else { 
             print ('Boo, x is 2 or less'); 
            }
 - Loops
     - Repeat things for a number of times, or until some condition is met
-    - while ( x < 10) { 
+    - - while ( x < 10) { 
         print ('X = ' . x);
         x = x + 1; // or x++;
        }
-    - do {
+    - - do {
         print ('X = ' . x);
     } while (x < 10)
     
-    - for (x = 0; x < 10; x++){
+    - - for (x = 0; x < 10; x++){
         print ('X = ' . x);
        }
 - Functions
-    - a sort of black box that ask to do something and it generally responds with an answer
-    - function add ( $x, $y ) {
+    - A sort of black box that ask to do something and it generally responds with an answer
+    - - function add ( $x, $y ) {
         return $x + $y;
        }  
-    - $x = sum( 3, 4);
+    - - $x = sum( 3, 4);
 - Scope
-    - you can have a variable within a function that shares a name with a variable outside of that function and there are zero issues with that.
-    - global scope
-    - function scope
+    - You can have a variable within a function that shares a name with a variable outside of that function and there are zero issues with that.
+    - Global scope
+    - Function scope
 
 #PHP Specifics
     - Variables must start with a $
@@ -93,7 +93,7 @@ Simple PHP ToDo App
             - id
             - todo
             - done
-            - CREATE TABLE IF NOT EXISTS `tb_todos` (
+            - - CREATE TABLE IF NOT EXISTS `tb_todos` (
               `id` bigint(20) NOT NULL AUTO_INCREMENT,
               `todo` text NOT NULL,
               `done` tinyint(1) NOT NULL,
@@ -101,7 +101,7 @@ Simple PHP ToDo App
             ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
     - PDO
     - db-config.php
-        - <?php
+        - - <?php
         //database info
         $db_info['server'] = 'localhost';
         $db_info['name'] = '';
