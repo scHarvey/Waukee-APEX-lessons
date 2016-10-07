@@ -1,3 +1,66 @@
+#Basic Development Fundamentals
+- Variables
+    - like basic algebra 
+    - x = 4
+    - x + 4 = 8
+    - Arrays
+        - A list of items 
+        - Numbered index 
+            - array_cars('ford', 'honda);
+            - echo array[1];
+        - Named indexes 
+            - array('first' => 'ford', 'second' => 'honda');
+            - echo array['first'];
+    - Classes/Objects
+        - The ultimate variable type
+        - the basic structure is called a class, and implementation of that class is an object
+        - can contain its own variables called "properties"
+        - can contain functions called methods
+        - object_car1->make = 'ford'
+        - object_car1->color = 'grey'
+        - object_car1->milage = '35000'
+        - object_car1->state = 'dirty'
+        - Lets say we have a method called "wash" that changes the car's state to 'clean'
+        - object_car1->wash
+        - echo object_car1
+- Conditional
+    - Logical operations
+        - if (x > 2) { 
+            print("Yay, x is greater than 2"); 
+           } else { 
+            print ('Boo, x is less than 2'); 
+           }
+- Loops
+    - Repeat things for a number of times, or until some condition is met
+    - while ( x < 10) { 
+        print ('X = ' . x);
+        x = x + 1; // or x++;
+       }
+    - do {
+        print ('X = ' . x);
+    } while (x < 10)
+    
+    - for (x = 0; x < 10; x++){
+        print ('X = ' . x);
+       }
+- Functions
+    - a sort of black box that ask to do something and it generally responds with an answer
+    - function add ( $x, $y ) {
+        return $x + $y;
+       }
+        
+       $x = sum( 3, 4);
+- Scope
+    - you can have a variable within a function that shares a name with a variable outside of that function and there are zero issues with that.
+    - global scope
+    - function scope
+
+#PHP Specifics
+    - Variables must start with a $
+    - Variable names are case sensitive: $x and $X are two different variables
+    - First character of a variable name (after the $) can't be a number.
+    - End of line signified by a ;
+
 # todo
 Simple PHP ToDo App
 
