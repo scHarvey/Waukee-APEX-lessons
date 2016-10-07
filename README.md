@@ -28,7 +28,7 @@
         - if (x > 2) { 
             print("Yay, x is greater than 2"); 
            } else { 
-            print ('Boo, x is less than 2'); 
+            print ('Boo, x is 2 or less'); 
            }
 - Loops
     - Repeat things for a number of times, or until some condition is met
