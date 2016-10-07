@@ -45,14 +45,7 @@ if ( isSet($_POST['todo']) ) {
       $todos = $stmt->fetchAll(PDO::FETCH_OBJ);
 
       foreach ($todos as $todo) {
-	      if ( 1 == $todo->done ) {
-		      //if our todo is marked as done then we'll use the $is_done variable to add a class to our li
-		      $is_done = ' done';
-	      } else {
-		      $is_done = '';
-	      }
-	
-	      echo '<li class="todo' . $is_done . '"><button type="button" class="btn btn-sm btn-danger" id="done-' . $todo->id . '"  >Done</button>' . $todo->todo . '</li>';
+	      echo '<li class="todo"><button type="button" class="btn btn-sm btn-danger" id="done-' . $todo->id . '"  >Done</button>' . $todo->todo . '</li>';
       }
       ?>
       </ul>
