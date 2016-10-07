@@ -47,9 +47,8 @@
     - a sort of black box that ask to do something and it generally responds with an answer
     - function add ( $x, $y ) {
         return $x + $y;
-       }
-        
-       $x = sum( 3, 4);
+       }  
+    - $x = sum( 3, 4);
 - Scope
     - you can have a variable within a function that shares a name with a variable outside of that function and there are zero issues with that.
     - global scope

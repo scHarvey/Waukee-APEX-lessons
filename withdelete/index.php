@@ -33,7 +33,7 @@ $db = new PDO('mysql:host=' . $db_info['server'] . ';dbname=' . $db_info['name']
 		      $is_done = '';
 	      }
 	
-	      echo '<li class="todo' . $is_done . '"><button class="btn-danger" onclick="window.location=\'deleteToDo.php?id=' . $todo->id . '\';">Done</button> ' . $todo->todo . '</li>';
+	      echo '<li class="todo' . $is_done . '"><button type="button" class="btn btn-sm btn-danger" onclick="window.location=\'deleteToDo.php?id=' . $todo->id . '\';">Done</button> ' . $todo->todo . '</li>';
       }
       ?>
       </ul>
