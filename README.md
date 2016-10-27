@@ -247,3 +247,15 @@ $stmt = $db->prepare( "DELETE FROM MYTABLE WHERE field1 = :field1" );
 $stmt->bindParam(':field1', $field1, PDO::PARAM_INT);
 $stmt->execute();
 ```
+
+
+# Table for our Login App
+```SQL
+CREATE TABLE IF NOT EXISTS `tb_users` (
+ `user_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+ `user_name` varchar(255) NOT NULL,
+ `password` varchar(255) NOT NULL,
+ `access_level` int(11) NOT NULL,
+ PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+```
