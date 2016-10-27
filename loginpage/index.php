@@ -2,8 +2,6 @@
 //pull in our database configurating variables
 require_once '../db_config.php';
 
-var_dump ($_POST);
-echo '<br />';
 //set up a connection to our database
 $db = new PDO('mysql:host=' . $db_info['server'] . ';dbname=' . $db_info['name'] . '', $db_info['user'], $db_info['pass']);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -36,6 +34,7 @@ if ( isSet($_POST['user_name']) && isSet($_POST['password']) ) {
   }
   //end old way
 */
+
   //new way with database check
   try {
 		$stmt = $db->prepare( "SELECT user_id, access_level from tb_users where user_name = :user_name AND password = :password" );
@@ -62,9 +61,10 @@ if ( isSet($_POST['user_name']) && isSet($_POST['password']) ) {
 		echo '<p>ERROR: ' . $e->getMessage() . '</p>';
 	}
 
-
-  echo 'Submitted Username = ' . $user_name . '<br />';
-  echo 'Submitted Password = ' . $password . '<br />';
+  echo '<div class="user_data">';
+    echo 'Submitted Username = ' . $user_name . '<br />';
+    echo 'Submitted Password = ' . $password . '<br />';
+  echo '</div>';
 }
  ?>
  <html>
