@@ -1,1 +1,7 @@
+# system files
+.htaccess
+.htpasswd
+.DS_Store
+Thumbs.db
 /.idea
+/.vscode
