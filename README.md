@@ -148,6 +148,10 @@ Simple PHP ToDo App
     ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 ```
 
+# SQL Basics
+If you want a good place to learn the basics of SQL try this SQLZoo playground. It lets you run various queries against their sample tables.
+http://sqlzoo.net/
+
 # Database and PDO
 PDO (PHP Data Objects) is currently the best way to interact with a database within PHP.
 It provides some simple classes that make connecting to and getting data into and out of a database easier, and also simplifies interacting with different types of databases (MySQL, MS SQL, Oracle, PostgreSQL).
