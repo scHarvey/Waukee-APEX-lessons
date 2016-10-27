@@ -1,23 +1,23 @@
 #Basic Development Fundamentals
 * Variables
-    * Like basic algebra 
+    * Like basic algebra
 
 ```javascript
-     x = 4 
+     x = 4
      x = x + 2
      print x
 ```
 
  * Arrays
-    * A list of items 
-    * Numbered index 
+    * A list of items
+    * Numbered index
 
 ```javascript
     array_cars('ford', 'honda');
     print array_cars[1];
 ```
 
-* Named indexes 
+* Named indexes
 
 ```javascript
     array('first' => 'ford', 'second' => 'honda');
@@ -56,17 +56,17 @@
 ```    
 
 ```javascript
-    if (x > 2) { 
-        print("Yay, x is greater than 2"); 
-       } else { 
-        print ('Boo, x is 2 or less'); 
+    if (x > 2) {
+        print("Yay, x is greater than 2");
+       } else {
+        print ('Boo, x is 2 or less');
        }
 ```
 * Loops
     * Repeat things for a number of times, or until some condition is met
 
 ```javascript
-    while ( x < 10) { 
+    while ( x < 10) {
         print ('X = ' . x);
         x = x + 1; // or x++;
     }
@@ -158,4 +158,54 @@ Simple PHP ToDo App
     $db_info['name'] = '';
     $db_info['user'] = '';
     $db_info['pass'] = '';
+```
+
+* Setting up a connection to a database and setting the error mode to aid in debugging
+
+```php
+$db = new PDO('mysql:host=' . $db_server . ';dbname=' . $db_name . '', $db_user, $db_pass);
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+```
+
+* Selecting some data from a table
+
+```php
+$stmt = $db->prepare( "SELECT field1, field2 FROM MYTABLE WHERE field3 = :field3 AND field4 = :field4" );
+$stmt->bindParam(':field3', $field3, PDO::PARAM_STR);
+$stmt->bindParam(':field4', $field4, PDO::PARAM_INT);
+$stmt->execute();
+$results = $stmt->fetchAll(PDO::FETCH_OBJ);  //return a collection of result objects
+
+//step over our results with a foreach loop
+foreach ( $results as $result ) {
+  print( 'Field 1: ' . $result->field1 . '<br />');
+  print( 'Field 2: ' . $result->field2 . '<br />');
+  print('<br />');
+}
+```
+
+* Insert data into a table
+
+```php
+$stmt = $db->prepare( "INSERT INTO MYTABLE(field1, field2) VALUES(:field1, :field2)" );
+$stmt->bindParam(':field1', $field1, PDO::PARAM_STR);
+$stmt->bindParam(':field2', $field2, PDO::PARAM_INT);
+$stmt->execute();
+```
+
+* Edit data in a table
+
+```php
+$stmt = $db->prepare( "UPDATE MYTABLE SET field1 = :new_field1 WHERE field2 = :field2" );
+$stmt->bindParam(':new_field1', $field1, PDO::PARAM_STR);
+$stmt->bindParam(':field2', $field2, PDO::PARAM_INT);
+$stmt->execute();
+```
+
+* Delete data into from table
+
+```php
+$stmt = $db->prepare( "DELETE FROM MYTABLE WHERE field1 = :field1" );
+	$stmt->bindParam(':field1', $field1, PDO::PARAM_INT);
+	$stmt->execute();
 ```
