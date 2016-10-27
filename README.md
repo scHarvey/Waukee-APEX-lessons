@@ -209,6 +209,6 @@ $stmt->execute();
 
 ```php
 $stmt = $db->prepare( "DELETE FROM MYTABLE WHERE field1 = :field1" );
-	$stmt->bindParam(':field1', $field1, PDO::PARAM_INT);
-	$stmt->execute();
+$stmt->bindParam(':field1', $field1, PDO::PARAM_INT);
+$stmt->execute();
 ```
