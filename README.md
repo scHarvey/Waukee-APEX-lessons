@@ -199,7 +199,7 @@ print( 'Field 1: ' . $result->field1 . '<br />');
 print( 'Field 2: ' . $result->field2 . '<br />');
 print('<br />');
 
-with PDO::FETCH_ASSOC
+//with PDO::FETCH_ASSOC
 print( 'Field 1: ' . $result['field1'] . '<br />');
 print( 'Field 2: ' . $result['field2'] . '<br />');
 print('<br />');
