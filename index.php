@@ -13,6 +13,7 @@
       <li><a href="externalprocessing">With External Processing</a></li>
       <li><a href="withdelete">With Delete</a></li>
       <li><a href="withedit">With Edit</a></li>
+			<li><a href="loginpage">Login Page</a></li>
     </ul>
         <footer class="info">
 
