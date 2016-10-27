@@ -148,12 +148,12 @@ Simple PHP ToDo App
     ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 ```
 
-* PDO
+# Database and PDO
 * db-config.php
 
 ```php
     <?php
-    //database info
+    //keep this database info in a single file so that you only have to change it once to update your whole project
     $db_info['server'] = 'localhost';
     $db_info['name'] = '';
     $db_info['user'] = '';
@@ -163,7 +163,10 @@ Simple PHP ToDo App
 * Setting up a connection to a database and setting the error mode to aid in debugging
 
 ```php
-$db = new PDO('mysql:host=' . $db_server . ';dbname=' . $db_name . '', $db_user, $db_pass);
+//pull in our db_config file
+require_once('db_config.php'); //or whatever the path to your file is, this assumes it's a file in our current directory
+$db = new PDO('mysql:host=' . $db_info['server'] . ';dbname=' . $db_info['name'] . '', $db_info['user'], $db_info['pass']);
+
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ```
 
