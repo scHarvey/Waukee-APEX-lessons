@@ -106,7 +106,7 @@
 * First character of a variable name (after the $) can't be a number.
 * End of line signified by a ;
 
-# todo
+# ToDo
 Simple PHP ToDo App
 
 * Think through problem
@@ -149,6 +149,9 @@ Simple PHP ToDo App
 ```
 
 # Database and PDO
+PDO (PHP Data Objects) is currently the best way to interact with a database within PHP.
+It provides some simple classes that make connecting to and getting data into and out of a database easier, and also simplifies interacting with different types of databases (MySQL, MS SQL, Oracle, PostgreSQL).
+
 * db-config.php
 
 ```php
@@ -165,19 +168,47 @@ Simple PHP ToDo App
 ```php
 //pull in our db_config file
 require_once('db_config.php'); //or whatever the path to your file is, this assumes it's a file in our current directory
+//create a connection to our database using a "connection string" which tells PDO the type of database and other info it needs to communicate with it
 $db = new PDO('mysql:host=' . $db_info['server'] . ';dbname=' . $db_info['name'] . '', $db_info['user'], $db_info['pass']);
-
+//sets the attribute "Error Mode" to "Exceptions" so that our code is easier to debug
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ```
 
 * Selecting some data from a table
+  * Select if only expecting a single result
 
 ```php
+//prepare our SQL statement with parameters for the variables we need to pass in
 $stmt = $db->prepare( "SELECT field1, field2 FROM MYTABLE WHERE field3 = :field3 AND field4 = :field4" );
+//tells our $stmt object that this parameter "field3" = the value of this PHP variable "$field3" and it should treat it like a string
 $stmt->bindParam(':field3', $field3, PDO::PARAM_STR);
+//same as above but this parameter should be treated as an integer
 $stmt->bindParam(':field4', $field4, PDO::PARAM_INT);
+//run our fully prepared query
 $stmt->execute();
-$results = $stmt->fetchAll(PDO::FETCH_OBJ);  //return a collection of result objects
+//assign the results of our query to a variable that we can work with in our code
+//PDO::FETCH_OBJ returns a single result as an object as opposed to PDO::FETCH_ASSOC which would return the result as an array
+$result = $stmt->fetch(PDO::FETCH_OBJ);  
+
+//with PDO::FETCH_OBJ
+print( 'Field 1: ' . $result->field1 . '<br />');
+print( 'Field 2: ' . $result->field2 . '<br />');
+print('<br />');
+
+with PDO::FETCH_ASSOC
+print( 'Field 1: ' . $result['field1'] . '<br />');
+print( 'Field 2: ' . $result['field2'] . '<br />');
+print('<br />');
+```
+
+  * Select if expecting more than one result
+
+```php
+$stmt = $db->prepare( "SELECT field1, field2 FROM MYTABLE WHERE field3 = :field3" );
+$stmt->bindParam(':field3', $field3, PDO::PARAM_STR);
+$stmt->execute();
+//return a collection of result objects or result arrays if using PDO::FETCH_ASSOC
+$results = $stmt->fetchAll(PDO::FETCH_OBJ);  
 
 //step over our results with a foreach loop
 foreach ( $results as $result ) {
