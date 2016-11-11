@@ -83,9 +83,9 @@ $db = new PDO('mysql:host=' . $db_info['server'] . ';dbname=' . $db_info['name']
 								}
 							},
 							error: function(xhr, ajaxOptions, thrownError) {
-				        alert(xhr.status);
-				        alert(thrownError);
-				      }
+								alert(xhr.status);
+								alert(thrownError);
+							}
 						});
 				}
 		</script>
