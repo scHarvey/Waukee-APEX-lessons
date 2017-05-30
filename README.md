@@ -1,4 +1,4 @@
-#Basic Development Fundamentals
+# Basic Development Fundamentals
 * Variables
     * Like basic algebra
 
@@ -100,7 +100,7 @@
     * Global scope
     * Function scope
 
-#PHP Specifics
+# PHP Specifics
 * Variables must start with a $
 * Variable names are case sensitive: $x and $X are two different variables
 * First character of a variable name (after the $) can't be a number.
